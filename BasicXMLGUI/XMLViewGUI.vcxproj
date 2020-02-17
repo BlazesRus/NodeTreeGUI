@@ -59,21 +59,21 @@
     <ClInclude Include="$(BlazesGlobalCode)\GlobalCode_VariableLists\VariableVectorFunctions.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\DynMultiView\StdAfx.cpp">
+    <ClCompile Include="..\DynMultiView\StdMultiView.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClInclude Include="..\DynMultiView\stdafx.h" />
+    <ClInclude Include="..\DynMultiView\StdMultiView.h" />
     <ClCompile Include="..\DynMultiView\AboutDlg.cpp">
-      <PrecompiledHeader>..\DynMultiView\StdAfx.cpp</PrecompiledHeader>
+      <PrecompiledHeader>..\DynMultiView\StdMultiView.h</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\DynMultiView\MultiViewDoc.cpp">
-      <PrecompiledHeader>..\DynMultiView\StdAfx.cpp</PrecompiledHeader>
+      <PrecompiledHeader>..\DynMultiView\StdMultiView.h</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\DynMultiView\MultiView.cpp">
-      <PrecompiledHeader>..\DynMultiView\StdAfx.cpp</PrecompiledHeader>
+      <PrecompiledHeader>..\DynMultiView\StdMultiView.h</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\DynMultiView\MainFrm.cpp">
-      <PrecompiledHeader>..\DynMultiView\StdAfx.cpp</PrecompiledHeader>
+      <PrecompiledHeader>..\DynMultiView\StdMultiView.h</PrecompiledHeader>
     </ClCompile>
     <ClInclude Include="..\DynMultiView\AboutDlg.h" />
 	<ClInclude Include="..\DynMultiView\MultiViewDoc.h" />
