@@ -23,5 +23,9 @@
 
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
+#include "..\DynMultiView\AboutDlg.h"
+#include "..\DynMultiView\MultiViewDoc.h"
+#include "..\DynMultiView\MainFrm.h"
+#include "..\DynMultiView\MultiView.h"
 
 #endif // !defined(AFX_STDAFX_H__B58C5F42_0DED_4EAD_BB0D_4C087D323F95__INCLUDED_)

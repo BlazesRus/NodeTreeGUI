@@ -57,6 +57,27 @@
     <ClInclude Include="$(BlazesGlobalCode)\GlobalCode_VariableLists\VariableList.h" />
     <ClInclude Include="$(BlazesGlobalCode)\GlobalCode_VariableLists\VariableTypeLists.h" />
     <ClInclude Include="$(BlazesGlobalCode)\GlobalCode_VariableLists\VariableVectorFunctions.h" />
-	
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\DynMultiView\StdAfx.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClInclude Include="..\DynMultiView\stdafx.h" />
+    <ClCompile Include="..\DynMultiView\AboutDlg.cpp">
+      <PrecompiledHeader>..\DynMultiView\StdAfx.cpp</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\DynMultiView\MultiViewDoc.cpp">
+      <PrecompiledHeader>..\DynMultiView\StdAfx.cpp</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\DynMultiView\MultiView.cpp">
+      <PrecompiledHeader>..\DynMultiView\StdAfx.cpp</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\DynMultiView\MainFrm.cpp">
+      <PrecompiledHeader>..\DynMultiView\StdAfx.cpp</PrecompiledHeader>
+    </ClCompile>
+    <ClInclude Include="..\DynMultiView\AboutDlg.h" />
+	<ClInclude Include="..\DynMultiView\MultiViewDoc.h" />
+    <ClInclude Include="..\DynMultiView\MultiView.h" />
+	<ClInclude Include="..\DynMultiView\MainFrm.h" />
   </ItemGroup>
 </Project>
