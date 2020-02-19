@@ -8,19 +8,25 @@
 #include "GlobalCode_IniData/CustomOrderedDictionary.h"
 
 /// <summary>
-/// Class named DataNode. (Node can hold other nodes)
+/// Class named DataNode. (Node links to other nodes in node bank)
+/// Held within NodeDictionary with int key
 /// </summary>
 class DataNode
 {public:
-	CustomOrderedDictionary<std::string,DataNode> NodeBank;
+	int NodeKey;
 	
+	///// <summary>
+	///// Index position of ParentNode (EmptyNode=inside Root Level by default)
+	///// </summary>
+	//int ParentIndex;
+
 	/// <summary>
 	/// The node name
 	/// </summary>
 	std::string DisplayName;
 	
 	/// <summary>
-	/// The r node
+	/// Holds position data and visual display of node
 	/// </summary>
 	CRect		rNode;
 
@@ -41,7 +47,7 @@ class DataNode
 	//10 = EndTag
 	short NodeType;
 public:
-    /// <summary>
+/*    /// <summary>
     /// Use insert if doesn't Already exist, otherwise set the value
     /// </summary>
     /// <param name="Key">The key.</param>
@@ -69,30 +75,32 @@ public:
     void Add(std::string Key, short nodeType)
 	{
 		NodeBank.Add(Key, new DataNode(NewNode, nodeType))
-	}
+	}*/
 	
 	/// <summary>
 	/// Initializes a new instance of the <see cref="DataNode"/> class. (All Data Nodes must have display names)
 	/// </summary>
 	/// <param name="name">The NodeName.</param>
-	DataNode(std::string displayname)
+	DataNode(std::string displayname, int nodeKey)
 	{
 		DisplayName = displayname;
 		rNode.SetRectEmpty();
 		bOpen = TRUE;
 		NodeType = 0;
+		NodeKey = nodeKey;
 	}
 	
 	/// <summary>
 	/// Initializes a new instance of the <see cref="DataNode"/> class.
 	/// </summary>
 	/// <param name="name">The NodeName.</param>
-	DataNode(std::string name, short nodeType)
+	DataNode(std::string name, short nodeType, int nodeKey)
 	{
 		DisplayName = name;
 		rNode.SetRectEmpty();
 		bOpen = TRUE;
 		NodeType = nodeType;
+		NodeKey = nodeKey;
 	}
 	
 	/// <summary>
