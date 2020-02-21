@@ -17,10 +17,10 @@ class DataDictionary : public tsl ::ordered_map<unsigned int, DataNode>
 {
 private:
     /// <summary>
-    /// The next index
+    /// The next index (Reserve 0 for root/none)
     /// </summary>
-    unsigned int NextIndex = 0;
-	std::vector<int> RemovedIndexes;
+    unsigned int NextIndex = 1;
+	std::vector<unsigned int> RemovedIndexes;
     unsigned int Add(unsigned int Key, DataNode Value)
     {
         auto p = this->insert({ Key, Value });

@@ -5,7 +5,8 @@
 #if !defined(DataNode_IncludeGuard)
 #define DataNode_IncludeGuard
 
-#include "GlobalCode_IniData/CustomOrderedDictionary.h"
+#include "ArgList.h"
+#include "VariableTypeLists.h"
 
 /// <summary>
 /// Class named DataNode. (Node links to other nodes in node bank)
@@ -13,39 +14,25 @@
 /// </summary>
 class DataNode
 {public:
-	int NodeKey;
+	/// <summary>
+	/// Index position of ParentNode (EmptyNode=inside Root Level by default)
+	/// </summary>
+	int ParentIndex;
 	
-	///// <summary>
-	///// Index position of ParentNode (EmptyNode=inside Root Level by default)
-	///// </summary>
-	//int ParentIndex;
+	/// <summary>
+	/// The indexes of all child nodes
+	/// </summary>
+	XIntegerList ChildNodes;
 
-	/// <summary>
-	/// The node name
-	/// </summary>
-	std::string DisplayName;
+	std::string TagName;
 	
-	/// <summary>
-	/// Holds position data and visual display of node
-	/// </summary>
-	CRect		rNode;
+	ArgList ArgData;
+	ArgStringList TagContent;
 
 	/// <summary>
 	/// The b open
 	/// </summary>
 	BOOL    bOpen;
-	
-	//0 = Default
-	//1 = Category Node
-	//2 = EventNode
-	//3 = VariableNode
-	//4 = Character Property
-	//5 = SingleLine Tag Context
-	//6 = Multiple Element Tag Context
-	//7 = Argument Menu
-	//9 = SingleLine End Tag
-	//10 = EndTag
-	short NodeType;
 public:
 /*    /// <summary>
     /// Use insert if doesn't Already exist, otherwise set the value
@@ -81,13 +68,13 @@ public:
 	/// Initializes a new instance of the <see cref="DataNode"/> class. (All Data Nodes must have display names)
 	/// </summary>
 	/// <param name="name">The NodeName.</param>
-	DataNode(std::string displayname, int nodeKey)
+	DataNode(std::string name, int nodeKey)
 	{
-		DisplayName = displayname;
+		TagName = name;
 		rNode.SetRectEmpty();
 		bOpen = TRUE;
 		NodeType = 0;
-		NodeKey = nodeKey;
+		nDisp.NodeKey = nodeKey;
 	}
 	
 	/// <summary>
@@ -96,7 +83,7 @@ public:
 	/// <param name="name">The NodeName.</param>
 	DataNode(std::string name, short nodeType, int nodeKey)
 	{
-		DisplayName = name;
+		TagName = name;
 		rNode.SetRectEmpty();
 		bOpen = TRUE;
 		NodeType = nodeType;
