@@ -20,7 +20,7 @@ public:
 
 /// <summary>
 /// Class named ArgList.
-/// Implements the <see cref="tsl::ordered_map{std::string, VaaaaalueType}" />
+/// Implements the <see cref="tsl::ordered_map{std::string, ValueType}" />
 /// </summary>
 /// <seealso cref="tsl::ordered_map{std::string, ArgElement}" />
 class ArgList : public tsl ::ordered_map<std::string, ArgElement>
