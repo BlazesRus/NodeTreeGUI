@@ -5,8 +5,6 @@
 #ifndef ArgStringList_IncludeGuard
 #define ArgStringList_IncludeGuard
 
-#include "VariableList.h"
-
 #include <string>
 
 class ArgStringList : public vertex < std::string >
@@ -14,38 +12,16 @@ class ArgStringList : public vertex < std::string >
 private:
 	//	bool FileStreamOpen = false;
 public:
-	ArgStringList(std::string Content)
+	ArgStringList()
 	{
-		string CurrentElement = "";
-		for(vector<char>::iterator CurrentChar = this.begin(); CurrentChar != this.end(); ++CurrentChar) 
-		{
-			if(CurrentElement == "")
-			{
-				if(*CurrentChar != '\n'&&*CurrentChar != ' '&&*CurrentChar != '\t'&&*CurrentChar != '	')
-				{
-					CurrentElement = *CurrentChar;
-				}
-			}
-			else
-			{
-				if(*CurrentChar != '\n'&&*CurrentChar != ' '&&*CurrentChar != '\t'&&*CurrentChar != '	')
-				{
-					CurrentElement += *CurrentChar;
-				}
-				else if(*CurrentChar != ',')
-				{
-					Add(CurrentElement);
-					CurrentElement = "";
-				}
-			}
-		}
+	
 	}
 	void LoadArgs(std::string Content)
 	{
-		if(!isEmpty())
-		{
-			this->clear();
-		}
+		//if(!isEmpty())
+		//{
+		//	this->clear();
+		//}
 		string CurrentElement = "";
 		for(vector<char>::iterator CurrentChar = this.begin(); Arg != this.end(); ++CurrentChar) 
 		{
@@ -64,11 +40,15 @@ public:
 				}
 				else if(*CurrentChar != ',')
 				{
-					Add(CurrentElement);
+					push_back(CurrentElement);
 					CurrentElement = "";
 				}
 			}
 		}
+	}
+	ArgStringList(std::string Content): ArgStringList()
+	{
+		LoadArgs(Content);
 	}
     /// <summary>
     /// Implements the operator std::string operator.

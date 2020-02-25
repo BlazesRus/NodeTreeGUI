@@ -1,6 +1,6 @@
 //Microsoft Developer Studio generated resource script.
 //
-#include "resource.h"
+#include "AppResources.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -311,7 +311,7 @@ LANGUAGE 0x21, 0x1
 
 1 TEXTINCLUDE DISCARDABLE
 BEGIN
-    "resource.h\0"
+    "AppResources.h\0"
 END
 
 2 TEXTINCLUDE DISCARDABLE

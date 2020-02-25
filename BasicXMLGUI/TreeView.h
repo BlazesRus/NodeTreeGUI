@@ -10,15 +10,15 @@
 
 #include "MultiviewPrecompile.h"
 #include "BhvContextMenu.h"
-#include "CDLG_TreeNodeText.h"
+#include "DLG_TreeNodeText.h"
 #include "TemplateMacros.h"
 #include <string>
 #include <typeinfo>
 #include "GlobalCode_IniData/IndexedDictionary.h"
 #include "GlobalCode_VariableLists/VariableTypeLists.h"
 #include "MultiViewDoc.h"
-#include "BasicDataNode.h"
-#include "BhvDataDictionary.h"
+#include "DataNode.h"
+#include "DataDictionary.h"
 #include "UIntVector.h"
 #include "ArgList.h"
 #include "VariableTypeLists.h"
@@ -135,6 +135,13 @@ public:
 
 		}
 	};
+
+	/// <summary>
+	/// Class named DataDictionary.
+	/// Implements the <see cref="std::unordered_map{std::string, DataNode}" />
+	/// </summary>
+	/// <seealso cref="std::unordered_map{std::string, DataNode}" />
+	class DataDictionary : public BasicDataDictionary<DataNode>{};
 public:
 	/// <summary>
 	/// Initializes a new instance of the <see cref="TreeView"/> class.
