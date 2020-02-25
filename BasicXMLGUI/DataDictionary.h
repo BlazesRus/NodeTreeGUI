@@ -2,18 +2,18 @@
 // Code Created by James Michael Armstrong (https://github.com/BlazesRus)
 // ***********************************************************************
 #pragma once
-#ifndef DataDictionary_IncludeGuard
-#define DataDictionary_IncludeGuard
+#ifndef BasicDataDictionary_IncludeGuard
+#define BasicDataDictionary_IncludeGuard
 
 #include "tsl\ordered_map.h"//Ordered map from https://github.com/Tessil/ordered-map
-#include "DataNode.h"
 
 /// <summary>
-/// Class named DataDictionary.
+/// Class named BasicDataDictionary.
 /// Implements the <see cref="std::unordered_map{std::string, DataNode}" />
 /// </summary>
 /// <seealso cref="std::unordered_map{std::string, DataNode}" />
-class DataDictionary : public tsl ::ordered_map<unsigned int, DataNode>
+template <typename DataNode>
+class BasicDataDictionary : public tsl ::ordered_map<unsigned int, DataNode>
 {
 private:
     /// <summary>
@@ -70,12 +70,12 @@ public:
 		RemovedIndexes.clear();
     }
     /// <summary>
-    /// Initializes a new instance of the <see cref="DataDictionary"/> class.
+    /// Initializes a new instance of the <see cref="BasicDataDictionary"/> class.
     /// </summary>
-    DataDictionary() {}
+    BasicDataDictionary() {}
     /// <summary>
-    /// Finalizes an instance of the <see cref="DataDictionary"/> class.
+    /// Finalizes an instance of the <see cref="BasicDataDictionary"/> class.
     /// </summary>
-    ~DataDictionary() {}
+    ~BasicDataDictionary() {}
 };
 #endif
