@@ -9,9 +9,9 @@
 
 /// <summary>
 /// Class named BasicDataDictionary.
-/// Implements the <see cref="std::unordered_map{std::string, DataNode}" />
+/// Implements the <see cref="std::unordered_map{unsigned int, DataNode}" />
 /// </summary>
-/// <seealso cref="std::unordered_map{std::string, DataNode}" />
+/// <seealso cref="std::unordered_map{unsigned int, DataNode}" />
 template <typename DataNode>
 class BasicDataDictionary : public tsl ::ordered_map<unsigned int, DataNode>
 {

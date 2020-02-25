@@ -13,16 +13,13 @@
 #include "DLG_TreeNodeText.h"
 #include <string>
 #include <typeinfo>
-#include "VariableLists/VariableTypeLists.h"
+#include "GlobalCode_VariableLists/VariableTypeLists.h"
 #include "MultiViewDoc.h"
 #include "DataNode.h"
 #include "DataDictionary.h"
 #include "UIntVector.h"
 #include "ArgList.h"
 #include "VariableTypeLists.h"
-
-#include "CustomDictionary.h"
-#include "NodeCoordinateDictionary.h"
 
 
 #ifdef _DEBUG
@@ -74,6 +71,7 @@ public:
 	TreeView()
 	{
 		//m_pTopNode = new DataNode("No File Loaded");	// The tree top
+		TargetNodeRegion = 0;
 
 		m_iIndent = 16;				// Indentation for tree branches
 		m_iPadding = 4;				// Padding between tree and the control border
@@ -130,9 +128,8 @@ protected:
 	UIntVector RootNodes;
 	CustomOrderedDictionary<std::string, unsigned int> NodeLinks;
 	
-
-	//string PrimaryTarget;
-	//string SecondaryTarget;
+	//If not zero, limits coordinate search region only within this node and all subnodes from it
+	unsigned int TargetNodeRegion;
 public:
 	/// <summary>
 	/// Loads the data from file.
@@ -140,7 +137,7 @@ public:
 	/// <param name="FilePath">The file path.</param>
 	/// <returns>bool</returns>
 	bool LoadDataFromFile(std::string FilePath)
-	{	return true; }//Placeholder
+	{	return true; }
 
 	/// <summary>
 	/// Saves the loaded data to file.
@@ -148,7 +145,7 @@ public:
 	/// <param name="FilePath">The file path.</param>
 	/// <returns>bool</returns>
 	bool SaveDataToFile(std::string FilePath)
-	{	return true; }//Placeholder
+	{	return true; }
 
 	/// <summary>
 	/// Resets this instance.
@@ -646,7 +643,6 @@ protected:
 		return CStatic::OnMouseWheel(nFlags, zDelta, pt);
 	}
 
-/*
 	/// <summary>
 	/// Called when [context menu].
 	/// </summary>
@@ -739,7 +735,7 @@ protected:
 		pDC->RestoreDC(iSaved);
 		ReleaseDC(pDC);
 	}
-*/
+
 	
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
