@@ -6,39 +6,38 @@
 #define ArgStringList_IncludeGuard
 
 #include <string>
+#include <vector>
 
-class ArgStringList : public vertex < std::string >
+class ArgStringList : public std::vector < std::string >
 {
-private:
-	//	bool FileStreamOpen = false;
 public:
 	ArgStringList()
 	{
 	
 	}
-	void LoadArgs(std::string Content)
+	void LoadArgs(const std::string &Content)
 	{
 		//if(!isEmpty())
 		//{
 		//	this->clear();
 		//}
-		string CurrentElement = "";
-		for(vector<char>::iterator CurrentChar = this.begin(); Arg != this.end(); ++CurrentChar) 
+		std::string CurrentElement = "";
+		for(char const &CurrentChar: Content)
 		{
 			if(CurrentElement == "")
 			{
-				if(*CurrentChar != '\n'&&*CurrentChar != ' '&&*CurrentChar != '\t'&&*CurrentChar != '	')
+				if(CurrentChar != '\n'&&CurrentChar != ' '&&CurrentChar != '\t')
 				{
-					CurrentElement = *CurrentChar;
+					CurrentElement = CurrentChar;
 				}
 			}
 			else
 			{
-				if(*CurrentChar != '\n'&&*CurrentChar != ' '&&*CurrentChar != '\t'&&*CurrentChar != '	')
+				if(CurrentChar != '\n'&&CurrentChar != ' '&&CurrentChar != '\t')
 				{
-					CurrentElement += *CurrentChar;
+					CurrentElement += CurrentChar;
 				}
-				else if(*CurrentChar != ',')
+				else if(CurrentChar != ',')
 				{
 					push_back(CurrentElement);
 					CurrentElement = "";
@@ -56,14 +55,14 @@ public:
     /// <returns>The result of the operator.</returns>
     explicit operator std::string()
 	{
-		string ConvertedString = "\"";
-		for(vector<std::string>::iterator Element = this.begin(); Element != this.end(); ++Element) 
+		std::string ConvertedString = "\"";
+		for(vector<std::string>::iterator Arg = this->begin(); Arg != this->end(); ++Arg)
 		{
-			if(i != this.begin())
+			if(Arg != this->begin())
 			{
 				ConvertedString += ",";
 			}
-			ConvertedString += *Element;
+			ConvertedString += *Arg;
 		}
 		ConvertedString += "\"";
 		return ConvertedString;

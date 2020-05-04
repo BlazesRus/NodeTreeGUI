@@ -3,10 +3,10 @@
 // Multi-view code based on https://www.codeproject.com/Articles/7686/Using-Multiview
 // ***********************************************************************
 #pragma once
-#include NodeViewApp_IncludeGuard
 #if !defined(NodeViewApp_IncludeGuard)
 #define NodeViewApp_IncludeGuard
 
+#include "StdAfx.h"
 #ifndef __AFXWIN_H__
 	#error include 'stdafx.h' before including this file for PCH
 #endif

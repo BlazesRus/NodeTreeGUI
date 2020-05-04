@@ -5,7 +5,7 @@
 #ifndef ArgList_IncludeGuard
 #define ArgList_IncludeGuard
 
-#include "..\tsl\ordered_map.h"//Ordered map from https://github.com/Tessil/ordered-map
+#include "ordered_map.h"//Ordered map from https://github.com/Tessil/ordered-map
 #include "ArgStringList.h"
 
 class ArgElement
