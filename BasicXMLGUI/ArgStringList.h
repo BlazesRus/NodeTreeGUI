@@ -8,7 +8,7 @@
 #include <string>
 #include <vector>
 
-class ArgStringList : public std::vector < std::string >
+class ArgStringList : public std::vector<std::string>
 {
 public:
 	ArgStringList()
@@ -56,9 +56,9 @@ public:
     explicit operator std::string()
 	{
 		std::string ConvertedString = "\"";
-		for(vector<std::string>::iterator Arg = this->begin(); Arg != this->end(); ++Arg)
+		for (vector<std::string>::iterator Arg = this->begin(), StartIndex = Arg, EndIndex = this->end(); Arg != EndIndex; ++Arg)
 		{
-			if(Arg != this->begin())
+			if(Arg != StartIndex)
 			{
 				ConvertedString += ",";
 			}

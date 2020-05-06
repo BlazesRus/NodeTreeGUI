@@ -5,25 +5,28 @@
 #if !defined(UIntVector_IncludeGuard)
 #define UIntVector_IncludeGuard
 
+#include <vector>
+
 /// <summary>
-/// Shortcut to prevent needed to construct new templated Vectors for Unsigned Int
+/// Shortcut to prevent need to construct new derived Vectors for Unsigned Int
 /// </summary>
 /// <seealso cref="std::vector" />
-class UIntVector : std::vector<unsigned int>
-{public:
+class UIntVector : public std::vector<unsigned int>
+{
+public:
 	bool DeleteFirstMatch(unsigned int targetVal)
 	{
 		bool NodeFound = false;
-		for(UIntVector::iterator Index = this.begin(), EndIndex = this.end(); Index != EndIndex||NodeFound; ++Index)
+		for (UIntVector::iterator CurrentVal = this->begin(), LastVal = this->end(); CurrentVal != LastVal || NodeFound; ++CurrentVal)
 		{
-			if(*Index==targetVal)
+			if (*CurrentVal == targetVal)
 			{
 				NodeFound = true;
-				this->erase(*Index);
+				this->erase(CurrentVal);
 			}
 		}
 		return NodeFound;
 	}
-}
+};
 
 #endif
