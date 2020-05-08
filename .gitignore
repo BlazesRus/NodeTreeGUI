@@ -30,3 +30,17 @@
 *.exe
 *.out
 *.app
+
+#log files and generated bin/database stuff
+*.log
+*.tlog
+*.pdb
+*.idb
+*.VC.db
+*.VC.opendb
+*.VC.db-shm
+*.VC.db-wal
+*.suo
+*.db
+
+*.ipch
