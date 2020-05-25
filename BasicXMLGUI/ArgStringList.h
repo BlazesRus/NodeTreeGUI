@@ -8,19 +8,51 @@
 #include <string>
 #include <vector>
 
-class ArgStringList : public std::vector<std::string>
+class ArgValue
+{
+private:
+	ArgValue()
+	{
+
+	}
+public:
+	std::string Value;
+	LONG ArgPos;
+	explicit operator std::string()
+	{
+		return Value;
+	}
+	ArgValue(std::string value)
+	{
+		Value = value;
+		ArgPos = 0;
+	}
+    ArgValue(CString value)
+    {
+		Value = value;
+        ArgPos = 0;
+    }
+};
+
+class ArgStringList : public std::vector<ArgValue>
 {
 public:
+	LONG ArgStart;
 	ArgStringList()
 	{
-	
+		ArgStart = 0;
 	}
-	void LoadArgs(const std::string &Content)
+	void Add(std::string Value)
 	{
-		//if(!isEmpty())
-		//{
-		//	this->clear();
-		//}
+		this->push_back(Value);
+	}
+
+/// <summary>
+/// Loads the arguments.
+/// </summary>
+/// <param name="Content">The content.</param>
+	void LoadArgs(const std::string& Content)
+	{
 		std::string CurrentElement = "";
 		for(char const &CurrentChar: Content)
 		{
@@ -45,8 +77,13 @@ public:
 			}
 		}
 	}
-	ArgStringList(std::string Content): ArgStringList()
+	/// <summary>
+	/// Initializes a new instance of the <see cref="ArgStringList"/> class.(Loads the arguments detected inside the string)
+	/// </summary>
+	/// <param name="Content">The content.</param>
+	ArgStringList(std::string Content) : ArgStringList()
 	{
+		ArgStart = 0;
 		LoadArgs(Content);
 	}
     /// <summary>
@@ -56,13 +93,13 @@ public:
     explicit operator std::string()
 	{
 		std::string ConvertedString = "\"";
-		for (vector<std::string>::iterator Arg = this->begin(), StartIndex = Arg, EndIndex = this->end(); Arg != EndIndex; ++Arg)
+		for (vector<ArgValue>::iterator Arg = this->begin(), StartIndex = Arg, EndIndex = this->end(); Arg != EndIndex; ++Arg)
 		{
 			if(Arg != StartIndex)
 			{
 				ConvertedString += ",";
 			}
-			ConvertedString += *Arg;
+			ConvertedString += (std::string)*Arg;
 		}
 		ConvertedString += "\"";
 		return ConvertedString;
