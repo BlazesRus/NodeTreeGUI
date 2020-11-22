@@ -1,3 +1,6 @@
 [submodule "WFWeaponModder"]
 	path = WFWeaponModder
 	url = ""
+[submodule "niflib"]
+	path = niflib
+	url = https://github.com/BlazesRus/niflib.git

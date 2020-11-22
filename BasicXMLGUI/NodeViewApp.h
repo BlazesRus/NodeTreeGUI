@@ -8,7 +8,7 @@
 
 #include "StdAfx.h"
 #ifndef __AFXWIN_H__
-	#error include 'stdafx.h' before including this file for PCH
+#error include 'stdafx.h' before including this file for PCH
 #endif
 
 #include "resource.h"       // main symbols
@@ -20,25 +20,25 @@
 
 class NodeViewApp : public CWinApp
 {
-	CView* m_pPrimaryView;
-	CView* m_pSecondaryView;
+    CView* m_pPrimaryView;
+    CView* m_pSecondaryView;
 public:
-	NodeViewApp();
+    NodeViewApp();
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(NodeViewApp)
-	public:
-	virtual BOOL InitInstance();
-	//}}AFX_VIRTUAL
+    // Overrides
+        // ClassWizard generated virtual function overrides
+        //{{AFX_VIRTUAL(NodeViewApp)
+public:
+    virtual BOOL InitInstance();
+    //}}AFX_VIRTUAL
 
 // Implementation
-	//{{AFX_MSG(NodeViewApp)
-	afx_msg void OnAppAbout();
-	afx_msg void OnViewPrimaryView();
-	afx_msg void OnViewSecondaryView();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    //{{AFX_MSG(NodeViewApp)
+    afx_msg void OnAppAbout();
+    afx_msg void OnViewPrimaryView();
+    afx_msg void OnViewSecondaryView();
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 #endif
 

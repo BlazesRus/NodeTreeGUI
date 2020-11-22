@@ -11,11 +11,11 @@
 class ArgElement
 {
 public:
-	ArgStringList Value;
+    ArgStringList Value;
     ArgElement(std::string value)
-	{
-		Value = value;
-	}
+    {
+        Value = value;
+    }
 }
 
 /// <summary>
@@ -23,7 +23,7 @@ public:
 /// Implements the <see cref="tsl::ordered_map{std::string, ValueType}" />
 /// </summary>
 /// <seealso cref="tsl::ordered_map{std::string, ArgElement}" />
-class ArgList : public tsl ::ordered_map<std::string, ArgElement>
+class ArgList : public tsl::ordered_map<std::string, ArgElement>
 {
 public:
     /// <summary>
@@ -39,7 +39,7 @@ public:
             p.first->second = Value;
         }
     }
-    ArgList(){}
-    ~ArgList(){}
+    ArgList() {}
+    ~ArgList() {}
 };
 #endif
