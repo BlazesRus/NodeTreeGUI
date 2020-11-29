@@ -43,3 +43,5 @@
 *.suo
 *.db
 *.ipch
+
+.vs/NodeTreeGUI/v16/

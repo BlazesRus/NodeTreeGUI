@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="tsl">
+      <UniqueIdentifier>{c5320bc8-7fc0-4b90-a000-8d484832a4cb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContextMenu.cpp">
@@ -22,6 +25,42 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DynMultiView\AboutDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DynMultiView\MainFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DynMultiView\MultiView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DynMultiView\MultiViewDoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BlazesGlobalCode)\QuadVector\QuadVector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BlazesGlobalCode)\QuadVector\QuadVectorFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DynMultiView\StdMultiView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BlazesGlobalCode)\StringFunctions\StringFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BlazesGlobalCode)\VariableLists\StringVectorList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BlazesGlobalCode)\VariableConversionFunctions\VariableConversionFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BlazesGlobalCode)\VariableLists\VariableTypeLists.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BlazesGlobalCode)\VariableLists\VariableVectorFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -54,6 +93,48 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UIntVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BlazesGlobalCode)\tsl\ordered_set.h">
+      <Filter>tsl</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BlazesGlobalCode)\tsl\ordered_map.h">
+      <Filter>tsl</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BlazesGlobalCode)\tsl\ordered_hash.h">
+      <Filter>tsl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DynMultiView\MultiView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DynMultiView\MainFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DynMultiView\MultiViewDoc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DynMultiView\AboutDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BlazesGlobalCode)\IniData\CustomOrderedDictionary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DynMultiView\StdMultiView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BlazesGlobalCode)\StringFunctions\StringFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BlazesGlobalCode)\VariableConversionFunctions\VariableConversionFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BlazesGlobalCode)\VariableLists\VariableList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BlazesGlobalCode)\VariableLists\VariableTypeLists.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BlazesGlobalCode)\VariableLists\VariableVectorFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

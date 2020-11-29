@@ -8,7 +8,7 @@
 
 #include "WP_APPDefines.h"
 
-#include "MultiviewPrecompile.h"
+#include "StdMultiView.h"
 //#include "ContextMenu.h"
 #include "DLG_TreeNodeText.h"
 #include <string>
