@@ -1,6 +1,0 @@
-[submodule "niflib"]
-	path = niflib
-	url = https://github.com/BlazesRus/niflib.git
-[submodule "XMLViewer"]
-	path = XMLViewer
-	url = https://github.com/BlazesRus/XMLViewer
